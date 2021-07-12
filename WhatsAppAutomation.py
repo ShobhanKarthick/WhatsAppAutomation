@@ -18,14 +18,10 @@ chromeoptions = webdriver.ChromeOptions()
 
 
 # %%
+## For Linux!
+
 chromeoptions.add_argument('--user-data-dir=./User_Data')
 chrome = webdriver.Chrome(chrome_options=chromeoptions)
-
-
-# %%
-chrome.implicitly_wait(30)
-chromeWait = WebDriverWait(chrome, 30)
-chrome.maximize_window()
 
 
 # %%
@@ -36,6 +32,12 @@ chrome.maximize_window()
 # chromeoptions.add_argument("user-data-dir=" + os.path.abspath(r'.\User_Data'))    # Windows needs Absolute Path to be given
 # chromeoptions.add_argument('--profile-directory=Profile 1')
 # chrome = webdriver.Chrome( executable_path="C:\Drivers\chromedriver.exe", chrome_options=chromeoptions)   # chromedriver absolute path should be given
+
+
+# %%
+chrome.implicitly_wait(30)
+chromeWait = WebDriverWait(chrome, 30)
+chrome.maximize_window()
 
 
 # %%
@@ -100,7 +102,7 @@ time.sleep(2)
 for i in range(5):
     TeleFileInput.send_keys(os.path.abspath("./ss_" + str(i+1) + ".png"))
 
-time.sleep(3)
+time.sleep(60)
 
 
 # %%
